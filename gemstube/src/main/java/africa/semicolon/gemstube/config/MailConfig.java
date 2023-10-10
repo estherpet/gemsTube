@@ -1,0 +1,18 @@
+package africa.semicolon.gemstube.config;
+
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@Getter
+@Setter
+public class MailConfig {
+    @Value("${mail.api.key}")
+    private String mailApiKey;
+    @Value("${brevo.mail.url}")
+    private  String BrevoMailUrl;
+}
+
+
