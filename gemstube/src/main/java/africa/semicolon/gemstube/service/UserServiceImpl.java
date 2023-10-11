@@ -1,8 +1,11 @@
-package africa.semicolon.gemstube.User;
+package africa.semicolon.gemstube.service;
 
-import africa.semicolon.gemstube.EmailSender.EmailRequest;
-import africa.semicolon.gemstube.EmailSender.MailService;
-import africa.semicolon.gemstube.EmailSender.Recipiant;
+import africa.semicolon.gemstube.dto.request.EmailRequest;
+import africa.semicolon.gemstube.dto.request.RegisterRequest;
+import africa.semicolon.gemstube.dto.response.RegisterResponse;
+import africa.semicolon.gemstube.data.model.User;
+import africa.semicolon.gemstube.data.repository.UserRepository;
+import africa.semicolon.gemstube.data.model.Recipiant;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +13,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private  final MailService mailService;
     @Override

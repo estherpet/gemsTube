@@ -1,6 +1,7 @@
-package africa.semicolon.gemstube.cloudService;
+package africa.semicolon.gemstube.media;
 
 import africa.semicolon.gemstube.exception.MediaUploadException;
+import africa.semicolon.gemstube.service.CloudService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

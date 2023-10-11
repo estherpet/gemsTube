@@ -1,4 +1,4 @@
-package africa.semicolon.gemstube.cloudService;
+package africa.semicolon.gemstube.service;
 
 import africa.semicolon.gemstube.exception.MediaUploadException;
 import org.springframework.web.multipart.MultipartFile;

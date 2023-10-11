@@ -1,4 +1,4 @@
-package africa.semicolon.gemstube.EmailSender;
+package africa.semicolon.gemstube.dto.response;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

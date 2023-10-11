@@ -1,5 +1,8 @@
-package africa.semicolon.gemstube.User;
-import africa.semicolon.gemstube.EmailSender.*;
+package africa.semicolon.gemstube.media;
+import africa.semicolon.gemstube.data.model.Recipiant;
+import africa.semicolon.gemstube.dto.request.EmailRequest;
+import africa.semicolon.gemstube.dto.response.EmailResponse;
+import africa.semicolon.gemstube.service.MailService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

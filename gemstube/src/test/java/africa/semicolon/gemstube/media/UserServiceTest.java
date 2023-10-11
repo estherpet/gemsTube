@@ -1,5 +1,8 @@
-package africa.semicolon.gemstube.User;
+package africa.semicolon.gemstube.media;
 
+import africa.semicolon.gemstube.dto.request.RegisterRequest;
+import africa.semicolon.gemstube.dto.response.RegisterResponse;
+import africa.semicolon.gemstube.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

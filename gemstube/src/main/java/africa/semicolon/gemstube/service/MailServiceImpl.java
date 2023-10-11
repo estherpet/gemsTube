@@ -1,6 +1,9 @@
-package africa.semicolon.gemstube.EmailSender;
+package africa.semicolon.gemstube.service;
 
 import africa.semicolon.gemstube.config.MailConfig;
+import africa.semicolon.gemstube.dto.request.EmailRequest;
+import africa.semicolon.gemstube.dto.response.EmailResponse;
+import africa.semicolon.gemstube.service.MailService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -18,7 +21,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON;
 
 @Service
 @AllArgsConstructor
-public class MailServiceImpl implements MailService{
+public class MailServiceImpl implements MailService {
     private final MailConfig mailConfig;
     @Override
     public EmailResponse sendMail(EmailRequest emailRequest) {

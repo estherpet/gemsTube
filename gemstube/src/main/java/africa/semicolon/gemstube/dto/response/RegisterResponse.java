@@ -1,4 +1,4 @@
-package africa.semicolon.gemstube.User;
+package africa.semicolon.gemstube.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

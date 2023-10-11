@@ -1,4 +1,4 @@
-package africa.semicolon.gemstube.User;
+package africa.semicolon.gemstube.data.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;

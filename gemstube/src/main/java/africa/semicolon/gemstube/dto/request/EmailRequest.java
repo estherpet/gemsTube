@@ -1,9 +1,10 @@
-package africa.semicolon.gemstube.EmailSender;
+package africa.semicolon.gemstube.dto.request;
 
+import africa.semicolon.gemstube.data.model.Recipiant;
+import africa.semicolon.gemstube.data.model.Sender;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.List;
 @Getter
 @AllArgsConstructor
 public class EmailRequest {
-    private  final  Sender sender;
+    private  final Sender sender;
     @JsonProperty("to")
     private List<Recipiant> recipiants;
     private String subject;
