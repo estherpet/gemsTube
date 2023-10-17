@@ -18,11 +18,12 @@ public class CoudinaryCloudService implements CloudService{
     @Override
     public String upload(MultipartFile file) throws MediaUploadException {
         try {
-            Map<?,?> uploadResponse = cloudinary.uploader().upload(file.getBytes(),ObjectUtils.emptyMap());
+            Map<?,?> uploadResponse = cloudinary.uploader().upload(file.getBytes(),ObjectUtils.asMap("resource_type","auto"));
             log.info("upload response ->{}",uploadResponse);
             String url = (String) uploadResponse.get("secure_url");
             return url;
         }catch (IOException exception){
+            exception.printStackTrace();
             throw new MediaUploadException(exception.getMessage());
         }
     }

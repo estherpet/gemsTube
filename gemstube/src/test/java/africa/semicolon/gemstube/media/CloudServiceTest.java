@@ -14,6 +14,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import static africa.semicolon.gemstube.data.model.Type.IMAGE;
+import static africa.semicolon.gemstube.data.model.Type.VIDEO;
+import static africa.semicolon.gemstube.media.MediaServiceTest.uploadFileTest;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
@@ -21,16 +24,18 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 public class CloudServiceTest {
     @Autowired
     private CloudService cloudService;
+    public static final String IMAGE_LOCATION = "C:\\Users\\Semicolon\\Downloads\\gemstube\\gemstube\\src\\main\\resources\\asset\\images (1).jfif";
+    public static final String VIDEO_LOCATION ="C:\\Users\\Semicolon\\Downloads\\gemstube\\gemstube\\src\\main\\resources\\asset\\Thanos _You could not live with your own failure_ (Avengers End Game Trailer).mp4";
+    public static  final String AUDIO_LOCATION ="";
     @Test
-    public void uploadFileTest(){
-        Path path = Paths.get("C:\\Users\\Semicolon\\Downloads\\gemstube\\gemstube\\src\\main\\resources\\asset\\images (1).jfif");
-       try ( var inputStream = Files.newInputStream(path)) {
-           MultipartFile file = new MockMultipartFile("test-image",inputStream);
-           String response = cloudService.upload(file);
-           assertNotNull(response);
-       }catch (IOException | MediaUploadException exception){
-           exception.printStackTrace();
-           log.error("ERROR :: {}",exception.getMessage());
-       }
+    public void testUploadImage() throws MediaUploadException{
+        String response = cloudService.upload(uploadFileTest(IMAGE_LOCATION));
+        assertNotNull(response);
     }
+    @Test
+    public void testUploadVideo() throws MediaUploadException{
+        String response = cloudService.upload(uploadFileTest(VIDEO_LOCATION));
+        assertNotNull(response);
+    }
+
 }

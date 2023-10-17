@@ -1,5 +1,6 @@
 package africa.semicolon.gemstube.dto.request;
 
+import africa.semicolon.gemstube.data.model.Type;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,5 +15,6 @@ public class UploadMediaRequest {
     private MultipartFile multipartFile;
     private String description;
     private String title;
+    private Type type;
 
 }

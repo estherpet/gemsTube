@@ -24,5 +24,11 @@ public class Media {
         private User uploader;
         private String url;
         private LocalDateTime createdAt;
+        @Enumerated(EnumType.STRING)
+        private Type type;
+        @PrePersist
+        public void setCreatedAt(){
+            this.createdAt = LocalDateTime.now();
+        }
 
 }
