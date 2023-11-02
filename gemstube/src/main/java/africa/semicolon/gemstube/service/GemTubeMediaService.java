@@ -33,6 +33,12 @@ private final ModelMapper modelMapper;
     Media savedMedia =   mediaRepository.save(media);
         return buildUploadMediaResponse(savedMedia);
     }
+
+    @Override
+    public Media getMediaById(Long id) {
+        return null;
+    }
+
     private static UploadMediaResponse buildUploadMediaResponse(Media media){
         UploadMediaResponse response = new UploadMediaResponse();
         response.setMessage("media upload successfully");

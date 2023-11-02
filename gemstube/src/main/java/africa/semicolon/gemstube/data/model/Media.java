@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDate;
+
 import java.time.LocalDateTime;
 
 @Entity
@@ -20,7 +20,7 @@ public class Media {
     private Long id;
         private String title;
         private String description;
-        @OneToOne(fetch = FetchType.EAGER)
+        @ManyToOne(fetch = FetchType.EAGER)
         private User uploader;
         private String url;
         private LocalDateTime createdAt;

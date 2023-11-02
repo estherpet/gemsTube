@@ -9,4 +9,5 @@ public interface UserService {
     RegisterResponse register(RegisterRequest request);
 
     User getUserById(Long id) throws GemstubeException;
+
 }

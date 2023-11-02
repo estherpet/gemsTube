@@ -6,8 +6,10 @@ import africa.semicolon.gemstube.dto.response.RegisterResponse;
 import africa.semicolon.gemstube.data.model.User;
 import africa.semicolon.gemstube.data.repository.UserRepository;
 import africa.semicolon.gemstube.data.model.Recipiant;
+import africa.semicolon.gemstube.dto.response.UserResponse;
 import africa.semicolon.gemstube.exception.GemstubeException;
 import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,6 +19,7 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private  final MailService mailService;
+    private final ModelMapper modelMapper;
     @Override
     public RegisterResponse register(RegisterRequest request) {
         User user = new User();
@@ -33,6 +36,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUserById(Long id) throws GemstubeException {
-        return userRepository.findById(id).orElseThrow(()-> new GemstubeException(String.format("user with id %d not found",id)));
+        return userRepository.findById(id).orElseThrow(()->
+                new GemstubeException(String.format("user with id %d not found",id)));
     }
 }
