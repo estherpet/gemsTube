@@ -1,6 +1,7 @@
 package africa.semicolon.gemstube.media;
 
 import africa.semicolon.gemstube.dto.request.AddCommentRequest;
+import africa.semicolon.gemstube.dto.request.UpdateCommentRequest;
 import africa.semicolon.gemstube.dto.response.ApiResponse;
 import africa.semicolon.gemstube.exception.GemstubeException;
 import africa.semicolon.gemstube.service.CommentService;
@@ -27,8 +28,13 @@ public class CommentServiceTest {
      assertThat(response).isInstanceOf(ApiResponse.class);
     }
     @Test
-    public void testUpdateComment(){
-
+    @Sql(value = "/insert.sql")
+    public void updateCommentTest() throws GemstubeException {
+        UpdateCommentRequest request = new UpdateCommentRequest();
+        request.setText("i now like your picture");
+      ApiResponse<?> response = commentService.updateComment(200L,102L,request);
+      assertThat(response).isNotNull();
+      assertThat(response.getMessage()).isNotNull();
     }
 
 }

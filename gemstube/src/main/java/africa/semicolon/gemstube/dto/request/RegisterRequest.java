@@ -8,6 +8,7 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 public class RegisterRequest {
+
     private  String email;
     private String password;
 }
