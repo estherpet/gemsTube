@@ -30,6 +30,7 @@ public class MediaControllerTest {
 
 //    mockMvc.perform(multipart("/api/v1/media").
 //            part(new MockPart("media",file.getBytes())))
-}
+
+    }
 
 }
